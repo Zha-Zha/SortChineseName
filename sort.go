@@ -53,7 +53,7 @@ func main() {
 		return
 	}
 	filePath += FileName
-	log.Println("Open file:", filePath)
+	log.Println("打开文件:", filePath)
 	file, err := os.Open(filePath)
 	if err != nil {
 		log.Fatalln(err)
@@ -99,7 +99,7 @@ func main() {
 	for {
 		n, err := fmt.Scanln(&str)
 		if n <= 0 || err != nil {
-			log.Println("拜拜")
+			log.Println("拜拜～～")
 			return
 		}
 		if isExist(nameList, str) {
