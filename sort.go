@@ -113,6 +113,7 @@ func main() {
 	}
 }
 
+//获取程序所在路径，而非工作路径
 func GetCurrentPath() (string, error) {
 	file, err := exec.LookPath(os.Args[0])
 	if err != nil {
@@ -123,9 +124,6 @@ func GetCurrentPath() (string, error) {
 		return "", err
 	}
 	i := strings.LastIndex(path, "/")
-	if i < 0 {
-		i = strings.LastIndex(path, "\\")
-	}
 	if i < 0 {
 		return "", errors.New(`can't find "/" or "\"`)
 	}
